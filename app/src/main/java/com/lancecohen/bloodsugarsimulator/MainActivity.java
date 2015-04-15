@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.text.SpannableString;
 
 
 public class MainActivity extends ActionBarActivity
@@ -32,6 +33,8 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+    private String[] mFragmentTitles;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,17 +48,68 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
+
+        //String s1 = mFragmentTitles[1];
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
+
+
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        switch (position) {
+            case 0:
+                fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+
+
+                break;
+            case 1:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new BloodSugarFragment())
+                        .addToBackStack("fragBack")
+                        .commit();
+
+
+
+                break;
+            case 2:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new DailyGlycationFragment())
+                        .addToBackStack("fragBack")
+                        .commit();
+
+
+
+        }
+
+        // Get Fragment Titles
+        mFragmentTitles = getResources().getStringArray(R.array.fragments);
+        // Set the title of the action bar
+        setTitle(mFragmentTitles[position]);
     }
 
+    @Override
+    public void setTitle(CharSequence title) {
+        mTitle = title;
+
+        // getSupportActionBar().setTitle(title);
+
+        SpannableString s = new SpannableString(title);
+
+
+        // Update the action bar title with the TypefaceSpan instance
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(s);
+
+    }
+
+
+    /*
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
@@ -68,13 +122,13 @@ public class MainActivity extends ActionBarActivity
                 mTitle = getString(R.string.title_section3);
                 break;
         }
-    }
+    } */
 
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        //actionBar.setTitle(mTitle);
     }
 
 
@@ -139,12 +193,13 @@ public class MainActivity extends ActionBarActivity
             return rootView;
         }
 
+        /*
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
             ((MainActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
-        }
+        } */
     }
 
 }

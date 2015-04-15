@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Blood Sugar Simulator</string>
 
-    <string name="title_section1">Data Input</string>
+    <string name="title_section1">Health Data Entry</string>
     <string name="title_section2">Daily Blood Sugar</string>
     <string name="title_section3">Daily Glycation</string>
 
@@ -12,14 +12,22 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="bloodSugarFragment">Daily Blood Glucose</string>
+    <string name="bloodSugarFragment">Daily Blood Sugar</string>
 
     <string name="glycationFragment">Daily Glycation</string>
+
+    <string-array name="fragments">
+        <item>Health Data Entry</item>
+        <item>Daily Blood Sugar</item>
+        <item>Daily Glycation</item>
+    </string-array>
 
     <string-array name="FoodList">
         <item>"Banana cake, made with sugar"</item>
         <item>"Banana cake, made without sugar"</item>
     </string-array>
+
+
 
 
 
