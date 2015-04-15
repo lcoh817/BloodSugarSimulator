@@ -2,7 +2,7 @@
     <string name="app_name">Blood Sugar Simulator</string>
 
     <string name="title_section1">Data Input</string>
-    <string name="title_section2">Daily Dlood Sugar</string>
+    <string name="title_section2">Daily Blood Sugar</string>
     <string name="title_section3">Daily Glycation</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
