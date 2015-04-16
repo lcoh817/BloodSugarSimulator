@@ -14,20 +14,19 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Food Entry:"
+        android:textStyle="bold"
         android:id="@+id/foodEntryLabel"
         android:layout_below="@+id/section_label"
-        android:layout_toRightOf="@+id/section_label"
-        android:layout_toEndOf="@+id/section_label" />
+        android:layout_centerHorizontal="true"
+       />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/foodEntryspinner"
-        android:layout_below="@+id/foodEntryLabel"
-        android:layout_toRightOf="@+id/section_label"
-        android:layout_toEndOf="@+id/section_label"
-        android:spinnerMode="dropdown"
         android:entries="@array/FoodList"
-        />
+        android:layout_below="@+id/foodEntryLabel"
+        android:layout_centerHorizontal="true"
+        android:spinnerMode="dropdown" />
 
 </RelativeLayout>
