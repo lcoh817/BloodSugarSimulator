@@ -25,19 +25,113 @@
     <string-array name="FoodList">
         <item>"Banana cake, made with sugar"</item>
         <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
-        <item>"Banana cake, made without sugar"</item>
+        <item>"Sponge cake, plain"</item>
+        <item>"Vanilla cake made from packet mix with vanilla frosting (Betty Crocker)"</item>
+        <item>"Apple, made with sugar"</item>
+        <item>"Apple, made without sugar"</item>
+        <item>"Waffles, Aunt Jemima (Quaker Oats)"</item>
+        <item>"Bagel, white, frozen"</item>
+        <item>"Baguette, white, plain"</item>
+        <item>"Coarse barley bread, 75-80% kernels, average"</item>
+        <item>"Hamburger bun"</item>
+        <item>"Kaiser roll"</item>
+        <item>"Pumpernickel bread"</item>
+        <item>"50% cracked wheat kernel bread"</item>
+        <item>"White wheat flour bread"</item>
+        <item>"Wonder™ bread, average"</item>
+        <item>"100% Whole Grain™ bread (Natural Ovens)"</item>
+        <item>"Pita bread, white"</item>
+        <item>"Corn tortilla"</item>
+        <item>"Wheat tortilla"</item>
+        <item>"Coca Cola®, average"</item>
+        <item>"Fanta®, orange soft drink"</item>
+        <item>"Lucozade®, original (sparkling glucose drink)"</item>
+        <item>"Apple juice, unsweetened, average"</item>
+        <item>"Cranberry juice cocktail (Ocean Spray®)"</item>
+        <item>"Gatorade"</item>
+        <item>"Orange juice, unsweetened"</item>
+        <item>"Tomato juice, canned"</item>
+        <item>"All-Bran™, average"</item>
+        <item>"Coco Pops™, average"</item>
+        <item>"Cornflakes™, average"</item>
+        <item>"Cream of Wheat™ (Nabisco)"</item>
+        <item>"Cream of Wheat™, Instant (Nabisco)"</item>
+        <item>"Grapenuts™, average"</item>
+        <item>"Muesli, average"</item>
+        <item>"Oatmeal, average"</item>
+        <item>"Instant oatmeal, average"</item>
+        <item>"Puffed wheat, average"</item>
+        <item>"Raisin Bran™ (Kellogg's)"</item>
+        <item>"Special K™ (Kellogg's)"</item>
+        <item>"Pearled barley, average"</item>
+        <item>"Sweet corn on the cob, average"</item>
+        <item>"Couscous, average"</item>
+        <item>"Quinoa"</item>
+        <item>"White rice, average"</item>
+        <item>"Converted, white rice (Uncle Ben's®)"</item>
+        <item>"Whole wheat kernels, average"</item>
+        <item>"Bulgur, average"</item>
+        <item>"Graham crackers"</item>
+        <item>"Vanilla wafers"</item>
+        <item>"Shortbread"</item>
+        <item>"Rice cakes, average"</item>
+        <item>"Rye crisps, average"</item>
+        <item>"Soda crackers"</item>
+        <item>"Ice cream, regular"</item>
+        <item>"Ice cream, premium"</item>
+        <item>"Milk, full fat"</item>
+        <item>"Milk, skim"</item>
+        <item>"Reduced-fat yogurt with fruit, average"</item>
+        <item>"Apple, average"</item>
+        <item>"Banana, ripe"</item>
+        <item>"Dates, dried"</item>
+        <item>"Grapefruit"</item>
+        <item>"Grapes, average"</item>
+        <item>"Orange, average"</item>
+        <item>"Peach, average"</item>
+        <item>"Peach, canned in light syrup"</item>
+        <item>"Pear, average"</item>
+        <item>"Pear, canned in pear juice"</item>
+        <item>"Prunes, pitted"</item>
+        <item>"Raisins"</item>
+        <item>"Watermelon"</item>
+        <item>"Baked beans, average"</item>
+        <item>"Blackeye peas, average"</item>
+        <item>"Black beans"</item>
+        <item>"Chickpeas, average"</item>
+        <item>"Chickpeas, canned in brine"</item>
+        <item>"Navy beans, average"</item>
+        <item>"Kidney beans, average"</item>
+        <item>"Lentils, average"</item>
+        <item>"Soy beans, average"</item>
+        <item>"Cashews, salted"</item>
+        <item>"Peanuts, average"</item>
+        <item>"Fettucini, average"</item>
+        <item>"Macaroni, average"</item>
+        <item>"Spaghetti, white, boiled, average"</item>
+        <item>"Spaghetti, white, boiled 20 min, average)"</item>
+        <item>"Spaghetti, wholemeal, boiled, average"</item>
+        <item>"Corn chips, plain, salted, average"</item>
+        <item>"Fruit Roll-Ups®"</item>
+        <item>"M and M's®, peanut"</item>
+        <item>"Microwave popcorn, plain, average"</item>
+        <item>"Potato chips, average"</item>
+        <item>"Pretzels, oven-baked)"</item>
+        <item>"Snickers Bar®"</item>
+        <item>"Carrots, average"</item>
+        <item>"Parsnips"</item>
+        <item>"Baked russet potato, average"</item>
+        <item>"Boiled white potato, average"</item>
+        <item>"Instant mashed potato, average"</item>
+        <item>"Sweet potato, average"</item>
+        <item>"Yam, average"</item>
+        <item>"Green peas, average"</item>
+        <item> "Hummus (chickpea salad dip)"</item>
+        <item>"Chicken nuggets, frozen, reheated in microwave oven 5 min"</item>
+        <item>"Pizza, plain baked dough, served with parmesan cheese and tomato sauce"</item>
+        <item>"Pizza, Super Supreme (Pizza Hut)"</item>
+        <item>"Honey, average"</item>
+
     </string-array>
 
 <!-- TODO: Remove or change this placeholder text -->
