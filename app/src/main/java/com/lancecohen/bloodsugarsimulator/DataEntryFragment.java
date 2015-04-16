@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,6 +29,12 @@ public class DataEntryFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // Reference to the fragment views
+    View view;
+
+    private LinearLayout mLinearListView;
+    private ArrayList<Item> mArrayListData;
 
     private OnFragmentInteractionListener mListener;
 
@@ -63,8 +72,12 @@ public class DataEntryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        // inflate the views layout
+        view = inflater.inflate(R.layout.fragment_data_entry, null);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_data_entry, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
