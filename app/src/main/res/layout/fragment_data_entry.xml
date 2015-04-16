@@ -10,23 +10,37 @@
         android:layout_height="wrap_content" />
 
     <TextView
+        android:id="@+id/foodEntryLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Food Entry:"
         android:textStyle="bold"
-        android:id="@+id/foodEntryLabel"
+
         android:layout_below="@+id/section_label"
         android:layout_centerHorizontal="true"
        />
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/foodEntryspinner"
-        android:entries="@array/FoodList"
-        android:layout_below="@+id/foodEntryLabel"
-        android:layout_centerHorizontal="true"
-        android:spinnerMode="dropdown" />
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/foodEntryLabel" >
+
+        <LinearLayout
+            android:id="@+id/linear_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/linear_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
