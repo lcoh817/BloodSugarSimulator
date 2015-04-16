@@ -110,14 +110,14 @@ public class DataEntryFragment extends Fragment {
              * getting id of row.xml
              */
 
-            TextView mLastName = (TextView) mLinearView
+            TextView fnameText = (TextView) mLinearView
                     .findViewById(R.id.foodName);
 
             /**
              * set item into row
              */
             final String foodName = mArrayListData.get(i).getItem();
-            mLastName.setText(foodName);
+             fnameText.setText(foodName);
 
             /**
              * add view in top linear
