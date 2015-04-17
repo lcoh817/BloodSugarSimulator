@@ -16,25 +16,58 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Food Entry:"
         android:textStyle="bold"
-
         android:layout_below="@+id/section_label"
         android:layout_centerHorizontal="true"
        />
 
     <ScrollView
-        android:id="@+id/scrollview"
+        android:id="@+id/foodScrollView"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_below="@+id/foodEntryLabel" >
 
         <LinearLayout
-            android:id="@+id/linear_scroll"
+            android:id="@+id/food_linear_scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <LinearLayout
-                android:id="@+id/linear_listview"
+                android:id="@+id/food_linear_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/exerciseEntryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Exercise Entry:"
+        android:textStyle="bold"
+        android:layout_below="@+id/foodScrollView"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"
+        />
+
+    <ScrollView
+        android:id="@+id/exerciseScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/exerciseEntryLabel" >
+
+        <LinearLayout
+            android:id="@+id/exercise_linear_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/exercise_linear_listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />

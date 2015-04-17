@@ -1,6 +1,5 @@
 package com.lancecohen.bloodsugarsimulator;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -83,7 +82,7 @@ public class DataEntryFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_data_entry, null);
 
         // Get a reference to the linear layout list view.
-        mLinearListView = (LinearLayout) view.findViewById(R.id.linear_listview);
+        mLinearListView = (LinearLayout) view.findViewById(R.id.food_linear_listview);
 
         foodList = getResources().getStringArray(R.array.FoodList);
 
