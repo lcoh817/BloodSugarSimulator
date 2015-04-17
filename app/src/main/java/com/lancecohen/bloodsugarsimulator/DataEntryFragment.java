@@ -35,11 +35,23 @@ public class DataEntryFragment extends Fragment {
     // Reference to the fragment views
     View view;
 
-    private LinearLayout mLinearListView;
-    private ArrayList<Item> mArrayListData;
+    // Reference to list view for food items
+    private LinearLayout foodLinearListView;
+
+    // Reference to list view for exercise items
+    private LinearLayout exerciseLinearListView;
+
+    // Reference to ArrayList for storing food items
+    private ArrayList<Item> foodArrayListData;
+
+    // Reference to ArrayList for storing exercise items
+    private ArrayList<Item> exerciseArrayListData;
 
     // Define reference to foodList string array
     private String[] foodList;
+
+    // Define reference to exerciseList string array
+    private String[] exerciseList;
 
     private OnFragmentInteractionListener mListener;
 
@@ -81,54 +93,75 @@ public class DataEntryFragment extends Fragment {
         // inflate the views layout
         view = inflater.inflate(R.layout.fragment_data_entry, null);
 
-        // Get a reference to the linear layout list view.
-        mLinearListView = (LinearLayout) view.findViewById(R.id.food_linear_listview);
+        // Get a reference to the food linear layout list view.
+        foodLinearListView = (LinearLayout) view.findViewById(R.id.food_linear_listview);
 
+
+        // Get a reference to the exercise linear layout list view.
+        exerciseLinearListView = (LinearLayout) view.findViewById(R.id.exercise_linear_listview);
+
+        // Extract the Food List data array into the foodList array
         foodList = getResources().getStringArray(R.array.FoodList);
 
-        mArrayListData = new ArrayList<Item>();
+        // Extract the Exercise List data array into the foodList array
+        exerciseList = getResources().getStringArray(R.array.ExerciseList);
 
+        // Instantiate the foodArrayList
+        foodArrayListData = new ArrayList<Item>();
+
+        // Instantiate the exerciseArrayList
+        exerciseArrayListData = new ArrayList<Item>();
+
+        // This loop adds to the foodList string items into the foodArrayList
         for (int i = 0; i < foodList.length; i++)
         {
 
-            mArrayListData.add(new Item(foodList[i]));
+            foodArrayListData.add(new Item(foodList[i]));
         }
 
+        // This loop adds to the exerciseList string items into the foodArrayList
+        for (int i = 0; i < exerciseList.length; i++)
+        {
+
+            exerciseArrayListData.add(new Item(exerciseList[i]));
+        }
+
+
         /***
-         * adding item into listview
+         * Adding item into the food listview
          */
-        for (int i = 0; i < mArrayListData.size(); i++) {
+        for (int i = 0; i < foodArrayListData.size(); i++) {
             /**
-             * inflate items/ add items in linear layout instead of listview
+             * inflate items/ add items in linear layout instead of food listview
              */
             //LayoutInflater inflater = null;
             inflater = (LayoutInflater) getActivity()
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View mLinearView = inflater.inflate(R.layout.row, null);
+            View foodLinearView = inflater.inflate(R.layout.row, null);
             /**
              * getting id of row.xml
              */
 
-            TextView fnameText = (TextView) mLinearView
-                    .findViewById(R.id.foodName);
+            TextView fnameText = (TextView) foodLinearView
+                    .findViewById(R.id.itemName);
 
             /**
              * set item into row
              */
-            final String foodName = mArrayListData.get(i).getItem();
+            final String foodName = foodArrayListData.get(i).getItem();
              fnameText.setText(foodName);
 
             /**
              * add view in top linear
              */
 
-            mLinearListView.addView(mLinearView);
+            foodLinearListView.addView(foodLinearView);
 
             /**
              * get item row on click
              *
              */
-            mLinearView.setOnClickListener(new View.OnClickListener() {
+            foodLinearView.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
@@ -138,6 +171,54 @@ public class DataEntryFragment extends Fragment {
                 }
             });
         }
+
+
+        /***
+         * Adding item into the exercise listview
+         */
+        for (int i = 0; i < exerciseArrayListData.size(); i++) {
+            /**
+             * inflate items/ add items in linear layout instead of exercise listview
+             */
+            //LayoutInflater inflater = null;
+            inflater = (LayoutInflater) getActivity()
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View exerciseLinearView = inflater.inflate(R.layout.row, null);
+            /**
+             * getting id of row.xml
+             */
+
+            TextView exnameText = (TextView) exerciseLinearView
+                    .findViewById(R.id.itemName);
+
+            /**
+             * set item into row
+             */
+            final String exerciseName = exerciseArrayListData.get(i).getItem();
+            exnameText.setText(exerciseName);
+
+            /**
+             * add view in top linear
+             */
+
+            exerciseLinearListView.addView(exerciseLinearView);
+
+            /**
+             * get item row on click
+             *
+             */
+            exerciseLinearView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    Toast.makeText(getActivity(), "Clicked item;" + exerciseName,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+
 
         // Inflate the layout for this fragment
         return view;

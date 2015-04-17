@@ -134,6 +134,16 @@
 
     </string-array>
 
+    <string-array name="ExerciseList">
+        <item>Crunches</item>
+        <item>Walking</item>
+        <item>Running</item>
+        <item>Sprinting</item>
+        <item>Squats</item>
+        <item>Bench press</item>
+    </string-array>
+
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

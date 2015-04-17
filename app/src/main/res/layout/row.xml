@@ -11,14 +11,14 @@
         android:orientation="horizontal" >
 
         <CheckBox
-            android:id="@+id/foodSelectedCB"
+            android:id="@+id/itemSelectedCB"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
 
              />
 
         <TextView
-            android:id="@+id/foodName"
+            android:id="@+id/itemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
