@@ -11,8 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.CheckBox;
+import android.widget.Button;
 import android.util.Log;
 import java.util.ArrayList;
+import android.view.View.OnClickListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,7 +24,7 @@ import java.util.ArrayList;
  * Use the {@link DataEntryFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DataEntryFragment extends Fragment {
+public class DataEntryFragment extends Fragment implements OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -55,6 +57,9 @@ public class DataEntryFragment extends Fragment {
 
     // Define a reference to checkBox next to food item
     private CheckBox cb;
+
+    // Define a reference to the submit Data button
+    private Button submitBn;
 
     // Private variable for tracking of total Food GI, initialised to 0
     private int totalFoodGI = 0;
@@ -117,6 +122,12 @@ public class DataEntryFragment extends Fragment {
         // inflate the views layout
         view = inflater.inflate(R.layout.fragment_data_entry, null);
 
+        // Get the reference to the submitButton
+        submitBn = (Button) view.findViewById(R.id.submitButton);
+
+        // Listen for clicks of the button- see onClick()
+        submitBn.setOnClickListener(this);
+
         // Get a reference to the food linear layout list view.
         foodLinearListView = (LinearLayout) view.findViewById(R.id.food_linear_listview);
 
@@ -132,8 +143,6 @@ public class DataEntryFragment extends Fragment {
 
         // Instantiate the foodArrayList
         foodArrayListData = new ArrayList<Item>();
-
-
 
         // Instantiate the exerciseArrayList
         exerciseArrayListData = new ArrayList<Item>();
@@ -371,8 +380,17 @@ public class DataEntryFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
 
+            case R.id.submitButton:
 
+                break;
+
+        }
+
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

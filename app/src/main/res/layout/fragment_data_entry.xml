@@ -86,7 +86,8 @@
         android:id="@+id/submitButton"
         android:layout_below="@+id/exerciseScrollView"
         android:layout_alignRight="@+id/foodEntryLabel"
-        android:layout_alignEnd="@+id/foodEntryLabel" />
+        android:layout_alignEnd="@+id/foodEntryLabel"
+        android:onClick="submitButton"/>
 
 
 </RelativeLayout>
