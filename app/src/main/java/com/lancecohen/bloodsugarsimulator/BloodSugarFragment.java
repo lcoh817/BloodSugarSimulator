@@ -63,6 +63,28 @@ public class BloodSugarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+      // 1. Get the current time for the day in hours and minutes
+
+
+      // 2. Calculate Blood sugar values up to the current hour and minute
+
+
+
+      //  t=0, bloodSugar = 80,
+
+        /* if currentTime == 1, then check if there has been a food input or exercise input
+
+
+
+         */
+
+
+
+
+
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_blood_sugar, container, false);
     }

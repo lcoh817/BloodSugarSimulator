@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.CheckBox;
+import android.util.Log;
 import java.util.ArrayList;
 
 
@@ -52,6 +53,9 @@ public class DataEntryFragment extends Fragment {
 
     // Define reference to exerciseList string array
     private String[] exerciseList;
+
+    // Define a reference to checkBox next to food item
+    private CheckBox cb;
 
     private OnFragmentInteractionListener mListener;
 
@@ -109,21 +113,26 @@ public class DataEntryFragment extends Fragment {
         // Instantiate the foodArrayList
         foodArrayListData = new ArrayList<Item>();
 
+
+
         // Instantiate the exerciseArrayList
         exerciseArrayListData = new ArrayList<Item>();
 
         // This loop adds to the foodList string items into the foodArrayList
         for (int i = 0; i < foodList.length; i++)
         {
-
-            foodArrayListData.add(new Item(foodList[i]));
+            int j = i+1;
+            // Add the food item string and the ID to the food list (the loop iterator is +1 of the item id)
+            foodArrayListData.add(new Item(foodList[i],j));
         }
 
         // This loop adds to the exerciseList string items into the foodArrayList
         for (int i = 0; i < exerciseList.length; i++)
         {
-
-            exerciseArrayListData.add(new Item(exerciseList[i]));
+            int j = i+1;
+            
+            // Add the food item string and the ID to the exercise list (the loop iterator is +1 of the item id)
+            exerciseArrayListData.add(new Item(exerciseList[i],j));
         }
 
 
@@ -138,9 +147,14 @@ public class DataEntryFragment extends Fragment {
             inflater = (LayoutInflater) getActivity()
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View foodLinearView = inflater.inflate(R.layout.row, null);
+
+            cb = (CheckBox) foodLinearView.findViewById(R.id.itemSelectedCB);
             /**
              * getting id of row.xml
              */
+
+
+
 
             TextView fnameText = (TextView) foodLinearView
                     .findViewById(R.id.itemName);
@@ -149,7 +163,12 @@ public class DataEntryFragment extends Fragment {
              * set item into row
              */
             final String foodName = foodArrayListData.get(i).getItem();
-             fnameText.setText(foodName);
+            fnameText.setText(foodName);
+
+            // Get the food item ID;
+            final int foodID = foodArrayListData.get(i).getItemID();
+
+            Log.i("LSC", "Food ID: " + foodID);
 
             /**
              * add view in top linear
@@ -165,11 +184,41 @@ public class DataEntryFragment extends Fragment {
 
                 @Override
                 public void onClick(View v) {
-                    // TODO Auto-generated method stub
+
                     Toast.makeText(getActivity(), "Clicked item;" + foodName,
                             Toast.LENGTH_SHORT).show();
+
+
                 }
             });
+
+
+
+           cb.setOnClickListener(new View.OnClickListener() {
+
+               @Override
+               public void onClick(View v) {
+
+
+                   Toast.makeText(getActivity(), "Food ID:" + foodID,
+                           Toast.LENGTH_SHORT).show();
+
+
+               }
+           });
+
+
+            /* If a food item has been checked then update the current GI, make the currentGI
+                a public instance variable that can be accessed by the BloodSugarFragment class
+
+                Perhaps, create a model for a food item, which has the GI as an instance variable
+
+
+
+             */
+
+
+
         }
 
 
@@ -216,6 +265,8 @@ public class DataEntryFragment extends Fragment {
                             Toast.LENGTH_SHORT).show();
                 }
             });
+
+            // If an exercise item has been checked, update the currentGI
         }
 
 

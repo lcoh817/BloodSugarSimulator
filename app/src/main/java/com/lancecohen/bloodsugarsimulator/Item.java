@@ -7,9 +7,20 @@ public class Item {
 
     private String item;
 
-    public Item(String item) {
+    private int itemID;
+
+    public int getItemID() {
+        return itemID;
+    }
+
+    public void setItemID(int itemID) {
+        this.itemID = itemID;
+    }
+
+    public Item(String item, int itemID) {
         super();
         this.item = item;
+        this.itemID = itemID;
     }
 
     public String getItem() {

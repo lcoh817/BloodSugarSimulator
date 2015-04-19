@@ -48,6 +48,7 @@ public class DailyGlycationFragment extends Fragment {
     }
 
     public DailyGlycationFragment() {
+
         // Required empty public constructor
     }
 
