@@ -57,6 +57,12 @@ public class DataEntryFragment extends Fragment {
     // Define a reference to checkBox next to food item
     private CheckBox cb;
 
+    // Private variable for tracking of total Food GI, initialised to 0
+    private int totalFoodGI = 0;
+
+    // Private variable for tracking of total exercise index, initialised to 0
+    private int totalExerciseIndex = 0;
+
     private OnFragmentInteractionListener mListener;
 
     /**
@@ -183,7 +189,7 @@ public class DataEntryFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
-                    Toast.makeText(getActivity(), "Clicked item;" + foodName,
+                    Toast.makeText(getActivity(), "Clicked item:" + foodName,
                             Toast.LENGTH_SHORT).show();
 
 
@@ -202,6 +208,11 @@ public class DataEntryFragment extends Fragment {
                            Toast.LENGTH_SHORT).show();
 
                    //
+                   int foodGI = getSelectedFoodGI(foodName);
+
+                   // Add selected foodGI to the totalFoodGI
+                   totalFoodGI = totalFoodGI + foodGI;
+
 
                }
            });
@@ -279,7 +290,10 @@ public class DataEntryFragment extends Fragment {
                     Toast.makeText(getActivity(), "Exercise ID:" + exerciseID,
                             Toast.LENGTH_SHORT).show();
 
-                    //
+                    int exerciseIndex = getSelectedExerciseIndex(exerciseID);
+
+                    // Add selected exerciseIndex to the totalExerciseIndex
+                    totalExerciseIndex = totalExerciseIndex + exerciseIndex;
 
                 }
             });
@@ -291,6 +305,24 @@ public class DataEntryFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    private int getSelectedFoodGI(String foodName){
+
+            int foodGI = 0;
+
+
+            return foodGI;
+    }
+
+    private int  getSelectedExerciseIndex(int exerciseID)
+    {
+
+            int exerciseIndex = 0;
+
+            return exerciseIndex;
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
