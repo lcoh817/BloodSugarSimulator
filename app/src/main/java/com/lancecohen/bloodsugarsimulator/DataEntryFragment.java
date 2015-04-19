@@ -84,6 +84,14 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
 
     private final int BENCHPRESS_EI = 45;
 
+    /*  Define a string constant to use as key to store total food GI for the current entry */
+    public static final String TOTAL_FOOD_GI = "TOTAL_FOOD_GI";
+
+    /*  Define a string constant to use as key to store total exercise index for the current entry */
+    public static final String TOTAL_EXERCISE_INDEX = "TOTAL_EXERCISE_INDEX";
+
+    /*  Define a string constant to use as key to store time stamp in minutes for the current entry */
+    public static final String ENTRY_TIMESTAMP_MIN = "ENTRY_TIMESTAMP_MIN";
 
     private OnFragmentInteractionListener mListener;
 
@@ -424,15 +432,15 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
         SharedPreferences.Editor editor = prefs.edit();
 
 		/*
-		 * Save the current total food GI
+		 * Save the current total food GI with key TOTAL_FOOD_GI
 		 */
-        editor.putInt("TOTAL_FOOD_GI", totalFoodGI);
+        editor.putInt(TOTAL_FOOD_GI, totalFoodGI);
 
-        // Save total exercise GI in shared preference
-        editor.putInt("TOTAL_EXERCISE_GI", totalExerciseIndex);
+        // Save total exercise GI in shared preference with key TOTAL_EXERCISE_INDEX
+        editor.putInt(TOTAL_EXERCISE_INDEX, totalExerciseIndex);
 
         // Save spf image count in shared preference
-        editor.putInt("ENTRY_TIMESTAMP", getTimeStampMinutes());
+        editor.putInt(ENTRY_TIMESTAMP_MIN, getTimeStampMinutes());
 
 		/*
 		 * Commit preferences back from the editor to the SharedPreferences
