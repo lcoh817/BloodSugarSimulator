@@ -70,6 +70,12 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
     // Private variable for tracking of total exercise index, initialised to 0
     private int totalExerciseIndex = 0;
 
+    // Declare and initialise an instance variable for determining if a food entry was made
+    private boolean foodEntryFlagRaised = false;
+
+    // Declare and initialise an instance variable for determining if a exercise entry was made
+    private boolean exerciseEntryFlagRaised = false;
+
     /* Define int EI constants for all exercises */
 
     private final int CRUNCHES_EI = 20;
@@ -92,6 +98,12 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
 
     /*  Define a string constant to use as key to store time stamp in minutes for the current entry */
     public static final String ENTRY_TIMESTAMP_MIN = "ENTRY_TIMESTAMP_MIN";
+
+    /*  Define a string constant to use as key to store if a food item entry is made */
+    public static final String FOOD_ENTRY_FLAG_RAISED = "FOOD_ENTRY_FLAG_RAISED";
+
+    /*  Define a string constant to use as key to store if a exercise item entry is made */
+    public static final String EXERCISE_ENTRY_FLAG_RAISED = "EXERCISE_ENTRY_FLAG_RAISED";
 
     private OnFragmentInteractionListener mListener;
 
@@ -247,6 +259,9 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
                    // Add selected foodGI to the totalFoodGI
                    totalFoodGI = totalFoodGI + foodGI;
 
+                   // Indicate that a food entry was made
+                   foodEntryFlagRaised = true;
+
 
                }
            });
@@ -329,6 +344,9 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
                     // Add selected exerciseIndex to the totalExerciseIndex
                     totalExerciseIndex = totalExerciseIndex + exerciseIndex;
 
+                    // Indicate that an exercise entry was made
+                    exerciseEntryFlagRaised = true;
+
                     // Used for debugging
                     Log.i("LSC", "Exercise Index of item:" + exerciseIndex);
                     Log.i("LSC", "Total Exercise Index: " + totalExerciseIndex);
@@ -348,7 +366,10 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
     // This method takes in a foodName and returns the food's GI
     private int getSelectedFoodGI(String foodName){
 
+             // Declare a local variable to store returned food index
             int foodGI = 0;
+
+
 
 
             return foodGI;
@@ -357,7 +378,7 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
     // This method take in an exercise ID and returns the exercise Index
     private int  getSelectedExerciseIndex(int exerciseID)
     {
-
+            // Declare a local variable to store returned exercise index
             int exerciseIndex = 0;
 
             switch(exerciseID){
@@ -439,8 +460,14 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
         // Save total exercise GI in shared preference with key TOTAL_EXERCISE_INDEX
         editor.putInt(TOTAL_EXERCISE_INDEX, totalExerciseIndex);
 
-        // Save spf image count in shared preference
+        // Save the output of getStampMinutes() in shared preference
         editor.putInt(ENTRY_TIMESTAMP_MIN, getTimeStampMinutes());
+
+        // Save food entry flag value in a shared preference
+        editor.putBoolean(FOOD_ENTRY_FLAG_RAISED, foodEntryFlagRaised);
+
+        // Save food entry flag raised in a shared preference
+        editor.putBoolean(EXERCISE_ENTRY_FLAG_RAISED, exerciseEntryFlagRaised);
 
 		/*
 		 * Commit preferences back from the editor to the SharedPreferences
@@ -464,7 +491,7 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
                 SharedPreferences prefs = this.getActivity().getPreferences(
                         Context.MODE_PRIVATE);
 
-          
+
          break;
 
         }
