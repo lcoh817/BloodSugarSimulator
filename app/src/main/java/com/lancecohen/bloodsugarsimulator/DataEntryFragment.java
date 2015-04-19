@@ -14,7 +14,6 @@ import android.widget.CheckBox;
 import android.util.Log;
 import java.util.ArrayList;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -62,6 +61,21 @@ public class DataEntryFragment extends Fragment {
 
     // Private variable for tracking of total exercise index, initialised to 0
     private int totalExerciseIndex = 0;
+
+    /* Define int EI constants for all exercises */
+
+    private final int CRUNCHES_EI = 15;
+
+    private final int WALKING_EI = 15;
+
+    private final int RUNNING_EI = 40;
+
+    private final int SPRINTING_EI = 60;
+
+    private final int SQUATS_EI = 60;
+
+    private final int BENCHPRESS_EI = 45;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -307,6 +321,7 @@ public class DataEntryFragment extends Fragment {
         return view;
     }
 
+    // This method takes in a foodName and returns the food's GI
     private int getSelectedFoodGI(String foodName){
 
             int foodGI = 0;
@@ -315,10 +330,34 @@ public class DataEntryFragment extends Fragment {
             return foodGI;
     }
 
+    // This method take in an exercise ID and returns the exercise Index
     private int  getSelectedExerciseIndex(int exerciseID)
     {
 
             int exerciseIndex = 0;
+
+            switch(exerciseID){
+
+                case 1:
+                    exerciseIndex = CRUNCHES_EI;
+                    break;
+                case 2:
+                    exerciseIndex = WALKING_EI;
+                    break;
+                case 3:
+                    exerciseIndex = RUNNING_EI;
+                    break;
+                case 4:
+                    exerciseIndex = SPRINTING_EI;
+                    break;
+                case 5:
+                    exerciseIndex = SQUATS_EI;
+                    break;
+                case 6:
+                    exerciseIndex = BENCHPRESS_EI;
+                    break;
+
+            }
 
             return exerciseIndex;
 
