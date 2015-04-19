@@ -130,7 +130,7 @@ public class DataEntryFragment extends Fragment {
         for (int i = 0; i < exerciseList.length; i++)
         {
             int j = i+1;
-            
+
             // Add the food item string and the ID to the exercise list (the loop iterator is +1 of the item id)
             exerciseArrayListData.add(new Item(exerciseList[i],j));
         }
@@ -168,8 +168,6 @@ public class DataEntryFragment extends Fragment {
             // Get the food item ID;
             final int foodID = foodArrayListData.get(i).getItemID();
 
-            Log.i("LSC", "Food ID: " + foodID);
-
             /**
              * add view in top linear
              */
@@ -203,6 +201,7 @@ public class DataEntryFragment extends Fragment {
                    Toast.makeText(getActivity(), "Food ID:" + foodID,
                            Toast.LENGTH_SHORT).show();
 
+                   //
 
                }
            });
@@ -233,6 +232,8 @@ public class DataEntryFragment extends Fragment {
             inflater = (LayoutInflater) getActivity()
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View exerciseLinearView = inflater.inflate(R.layout.row, null);
+
+            cb = (CheckBox) exerciseLinearView.findViewById(R.id.itemSelectedCB);
             /**
              * getting id of row.xml
              */
@@ -245,6 +246,9 @@ public class DataEntryFragment extends Fragment {
              */
             final String exerciseName = exerciseArrayListData.get(i).getItem();
             exnameText.setText(exerciseName);
+
+            // Get the food item ID;
+            final int exerciseID = foodArrayListData.get(i).getItemID();
 
             /**
              * add view in top linear
@@ -263,6 +267,20 @@ public class DataEntryFragment extends Fragment {
                     // TODO Auto-generated method stub
                     Toast.makeText(getActivity(), "Clicked item;" + exerciseName,
                             Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            cb.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+
+                    Toast.makeText(getActivity(), "Exercise ID:" + exerciseID,
+                            Toast.LENGTH_SHORT).show();
+
+                    //
+
                 }
             });
 
