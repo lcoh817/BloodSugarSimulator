@@ -72,7 +72,7 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
 
     /* Define int EI constants for all exercises */
 
-    private final int CRUNCHES_EI = 15;
+    private final int CRUNCHES_EI = 20;
 
     private final int WALKING_EI = 15;
 
@@ -461,6 +461,10 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
                 // Save the entry data
                 saveEntryData();
 
+                SharedPreferences prefs = this.getActivity().getPreferences(
+                        Context.MODE_PRIVATE);
+
+          
          break;
 
         }
