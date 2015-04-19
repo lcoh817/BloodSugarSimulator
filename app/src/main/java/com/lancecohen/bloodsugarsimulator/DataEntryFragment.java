@@ -14,7 +14,10 @@ import android.widget.CheckBox;
 import android.widget.Button;
 import android.util.Log;
 import java.util.ArrayList;
+import java.util.Calendar;
+
 import android.view.View.OnClickListener;
+import android.content.SharedPreferences;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -318,6 +321,10 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
                     // Add selected exerciseIndex to the totalExerciseIndex
                     totalExerciseIndex = totalExerciseIndex + exerciseIndex;
 
+                    // Used for debugging
+                    Log.i("LSC", "Exercise Index of item:" + exerciseIndex);
+                    Log.i("LSC", "Total Exercise Index: " + totalExerciseIndex);
+
                 }
             });
 
@@ -380,13 +387,73 @@ public class DataEntryFragment extends Fragment implements OnClickListener {
         }
     }
 
+    /* This method returns the current system time in Minutes */
+    private int getTimeStampMinutes(){
+
+        // Get an instance of the current system calendar
+        final Calendar c = Calendar.getInstance();
+
+        // Get the current hour of the day
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+
+        // Get the current minute of the hour
+        int minute = c.get(Calendar.MINUTE);
+
+        // Set the timestamp to be the hour in minutes plus the minute
+        int timeStampMinutes = hour*60 + minute;
+
+        return timeStampMinutes;
+
+
+    }
+
+     /*  This method saves entry data: totalFoodGI, totalExerciseGI and the entry timeStamp in minutes*/
+    private void saveEntryData(){
+
+        /*
+		 * Get access to the activities preference file object for storing
+		 * key-value pairs
+		 */
+        SharedPreferences prefs = this.getActivity().getPreferences(
+                Context.MODE_PRIVATE);
+
+		/*
+		 * Create an editor for preference object thru which can make
+		 * modifications
+		 */
+        SharedPreferences.Editor editor = prefs.edit();
+
+		/*
+		 * Save the current total food GI
+		 */
+        editor.putInt("TOTAL_FOOD_GI", totalFoodGI);
+
+        // Save total exercise GI in shared preference
+        editor.putInt("TOTAL_EXERCISE_GI", totalExerciseIndex);
+
+        // Save spf image count in shared preference
+        editor.putInt("ENTRY_TIMESTAMP", getTimeStampMinutes());
+
+		/*
+		 * Commit preferences back from the editor to the SharedPreferences
+		 * object
+		 */
+        editor.commit();
+
+
+
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
 
             case R.id.submitButton:
 
-                break;
+                // Save the entry data
+                saveEntryData();
+
+         break;
 
         }
 
